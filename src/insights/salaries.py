@@ -1,5 +1,8 @@
 from typing import Union, List, Dict
+
 from src.insights.jobs import read
+
+# from jobs import read
 
 
 def get_max_salary(path: str) -> int:
@@ -7,14 +10,14 @@ def get_max_salary(path: str) -> int:
 
     max_salary = 0
     for salary in salaries:
-        item = int(salary["max_salary"])
-        print(item)
-        if item > max_salary:
-            max_salary = item
+        if salary["max_salary"] == "":
+            max_salary = max_salary
+        elif (
+            salary["max_salary"] != "invalid"
+            and int(salary["max_salary"]) > max_salary
+        ):
+            max_salary = int(salary["max_salary"])
     return max_salary
-
-
-get_max_salary("data/jobs.csv")
 
 
 def get_min_salary(path: str) -> int:
