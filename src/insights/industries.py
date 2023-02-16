@@ -1,14 +1,15 @@
-import src.insights.jobs as jobs
+from src.insights.jobs import read
+# from jobs import read
 from typing import List, Dict
 
 
 def get_unique_industries(path: str) -> List[str]:
-    industries = jobs.read(path)
+    industries = read(path)
 
     type_industries = []
     for industry in industries:
         item = industry["industry"]
-        if item not in type_industries:
+        if item not in type_industries and item != '':
             type_industries.append(industry["industry"])
     return type_industries
 
