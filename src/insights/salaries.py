@@ -23,7 +23,7 @@ def get_max_salary(path: str) -> int:
 def get_min_salary(path: str) -> int:
     salaries = read(path)
 
-    min_salary = get_max_salary('data/jobs.csv')
+    min_salary = get_max_salary("data/jobs.csv")
     for salary in salaries:
         if salary["min_salary"] == "":
             min_salary = min_salary
@@ -36,46 +36,29 @@ def get_min_salary(path: str) -> int:
 
 
 def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
-    """Checks if a given salary is in the salary range of a given job
 
-    Parameters
-    ----------
-    job : dict
-        The job with `min_salary` and `max_salary` keys
-    salary : int
-        The salary to check if matches with salary range of the job
+    if (
+        "min_salary" not in job
+        and "max_salary" not in job
+        or isinstance(job["min_salary"], int) is not True
+        and isinstance(job["max_salary"], int)
+        or job["min_salary"] > job["max_salary"]
+        or isinstance(salary, int) is not True
+    ):
+        raise ValueError
 
-    Returns
-    -------
-    bool
-        True if the salary is in the salary range of the job, False otherwise
+    return salary >= job["min_salary"] and salary <= job["max_salary"]
 
-    Raises
-    ------
-    ValueError
-        If `job["min_salary"]` or `job["max_salary"]` doesn't exists
-        If `job["min_salary"]` or `job["max_salary"]` aren't valid integers
-        If `job["min_salary"]` is greather than `job["max_salary"]`
-        If `salary` isn't a valid integer
-    """
-    raise NotImplementedError
+
+# print(matches_salary_range([{"min_salary": 50, "max_salary": 100}], 60))
 
 
 def filter_by_salary_range(
     jobs: List[dict], salary: Union[str, int]
 ) -> List[Dict]:
-    """Filters a list of jobs by salary range
+    salary_filtred = []
+    for item in jobs:
+        if item["max_salary"] == salary or item["min_salary"]:
+            salary_filtred.append(item)
 
-    Parameters
-    ----------
-    jobs : list
-        The jobs to be filtered
-    salary : int
-        The salary to be used as filter
-
-    Returns
-    -------
-    list
-        Jobs whose salary range contains `salary`
-    """
-    raise NotImplementedError
+    return salary_filtred
