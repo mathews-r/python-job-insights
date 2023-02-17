@@ -1,8 +1,8 @@
 from typing import Union, List, Dict
 
-# from src.insights.jobs import read
+from src.insights.jobs import read
 
-from jobs import read
+# from jobs import read
 
 
 def get_max_salary(path: str) -> int:
@@ -38,20 +38,22 @@ def get_min_salary(path: str) -> int:
 def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
 
     if "min_salary" not in job or "max_salary" not in job:
-        raise ValueError("min_salary e max_salary são obrigatórios")
+        raise ValueError
     elif (
         isinstance(job["min_salary"], int) is False
         or isinstance(job["max_salary"], int) is False
     ):
-        raise ValueError("Os valores precisam ser números")
+        raise ValueError
 
     elif job["min_salary"] > job["max_salary"]:
-        raise ValueError("O valor de min_salary é maior do que max_salary")
+        raise ValueError
 
-    elif isinstance(salary, int) is not True:
-        raise ValueError("Salário precisa ser um número")
+    elif isinstance(salary, int) is False and isinstance(salary, str) is False:
+        raise ValueError
 
-    return salary >= job["min_salary"] and salary <= job["max_salary"]
+    return int(salary) >= int(job["min_salary"]) and int(salary) <= int(
+        job["max_salary"]
+    )
 
 
 print(matches_salary_range({"min_salary": 50, "max_salary": 100}, 60))
