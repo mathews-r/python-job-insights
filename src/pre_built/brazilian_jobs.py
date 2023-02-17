@@ -1,4 +1,5 @@
 from functools import lru_cache
+
 from src.insights import jobs
 from typing import List, Dict
 
@@ -24,3 +25,6 @@ def read_brazilian_file(path: str) -> List[Dict]:
         job["type"] = job.pop("tipo")
 
     return dict_jobs
+
+
+print(read_brazilian_file("tests/mocks/brazilians_jobs.csv"))

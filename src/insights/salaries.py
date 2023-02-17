@@ -68,7 +68,6 @@ def filter_by_salary_range(
         try:
             if matches_salary_range(job, salary):
                 jobs_filtred.append(job)
-                print(jobs_filtred)
         except ValueError as exc:
             print(exc)
 
