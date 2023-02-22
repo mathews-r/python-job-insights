@@ -20,6 +20,7 @@ from src.flask_app.more_insights import (
     slice_jobs,
     get_int_from_args,
     build_jobs_urls,
+    get_job,
 )
 
 bp = Blueprint("client", __name__, template_folder="templates")
@@ -81,3 +82,11 @@ def list_jobs():
 
 def init_app(app: Flask):
     app.register_blueprint(bp)
+
+
+@bp.route("/job/<index>")
+def job(index):
+    jobs = read(path="data/jobs.csv")
+
+    job = get_job(jobs, index)
+    return render_template("job.jinja2", job=job)
