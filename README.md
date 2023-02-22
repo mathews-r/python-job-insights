@@ -1,13 +1,61 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+# :office: Job Insights
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+
+Neste projeto implementei análises a partir de um conjunto de dados sobre empregos. Essas implementações são incorporadas a um aplicativo Web desenvolvido com Flask. Também escrevi testes para a implementação de uma análise de dados. Por fim, como bônus, tive o desafio de escrever uma rota e view para um recurso novo usando Flask!
+
+Os dados foram extraídos do site Glassdoor e obtidos através do Kaggle, uma plataforma disponiblizando conjuntos de dados para cientistas de dados.
+
+![image](https://user-images.githubusercontent.com/83560101/220708251-33ea8816-247f-4b70-81a4-0bee7986f3df.png)
+
+
+## ⚙️ Habilidades trabalhadas
+
+✅ Utilizar o terminal interativo do Python;
+
+✅ Utilizar estruturas condicionais e de repetição;
+
+✅ Utilizar funções built-in do Python;
+
+✅ Utilizar tratamento de exceções;
+
+✅ Realizar a manipulação de arquivos;
+
+✅ Escrever funções;
+
+✅ Escrever testes com Pytest;
+
+✅ Escrever seus próprios módulos e importá-los em outros códigos
+
+## :hammer_and_wrench: Ferramentas 
+### 🍮 BackEnd
+- Python;
+- PyTest;
+- DOCKER;
+
+# Orientações
+
+- *Clonar o repositório:*
+
+```
+$ git clone git@github.com:mathews-r/job-insights.git
+```
+
+- *Acessar o projeto blogsapi:*
+
+```
+$ cd job-insights
+```
+
+
+- *Para acessar a aplicação:*
+```
+Utilizar o comando flask run
+
+acesso: http://localhost:5000
+
+```
+
+## 👨‍💻 Desenvolvedor
+
+- [Mathews Rodrigues](https://www.linkedin.com/in/mathewsrodrigues/)
